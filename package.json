@@ -1,6 +1,6 @@
 {
   "name": "mordac",
-  "version": "0.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Mordac, the restorer of Dilbert RSS feeds.",
   "main": "index.js",
   "scripts": {
