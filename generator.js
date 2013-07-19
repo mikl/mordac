@@ -30,7 +30,7 @@ function htmlImageFragment(url, title) {
   xw.startElement('div');
   xw.startElement('img');
   xw.writeAttribute('alt', title);
-  xw.writeAttribute('src', url);
+  xw.writeAttribute('src', 'http://dilbert.com/' + url);
   xw.writeAttribute('title', title);
 
   return xw.toString();
