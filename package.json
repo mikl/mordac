@@ -1,0 +1,21 @@
+{
+  "name": "mordac",
+  "version": "0.0.0",
+  "description": "Mordac, the restorer of Dilbert RSS feeds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mikl/mordac.git"
+  },
+  "keywords": [
+    "RSS"
+  ],
+  "author": "Mikkel Hoegh <mikkel@hoegh.org>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/mikl/mordac/issues"
+  }
+}
