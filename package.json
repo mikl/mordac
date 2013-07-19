@@ -17,5 +17,15 @@
   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/mikl/mordac/issues"
+  },
+  "dependencies": {
+    "async": "~0.2.9",
+    "atom-writer": "~1.1.2",
+    "cheerio": "~0.12.0",
+    "level": "~0.10.0",
+    "moment": "~2.1.0",
+    "request": "~2.22.0",
+    "winston": "~0.7.2",
+    "xml-writer": "~1.3.1"
   }
 }
