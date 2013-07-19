@@ -47,7 +47,9 @@ module.exports = function generator(values) {
   // Generate the feed header.
   aw
     .startFeed(baseURN + 'atom.xml')
-    .writeTitle('Mordac’s RSS feed');
+    .writeTitle('Mordac’s RSS feed')
+    .writeAuthor('Scott Adams')
+    .writeContributor('Mordac the Preventer of Information Services');
 
 
   // Generate an entry for each value.
