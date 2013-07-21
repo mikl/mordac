@@ -31,7 +31,8 @@ module.exports = function (startFrom) {
     db.get(date, function (err, value) {
       // If we do not have data for this date yet, fetch the markup,
       // parse it and store the output.
-      if (err && err.name === 'NotFoundError') {
+      if ((err && err.name === 'NotFoundError') ||
+          !value.largeImage || !value.largeImage.url) {
         async.waterfall([
           function (cb) {
             fetchMarkup(date, cb);

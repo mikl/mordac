@@ -16,5 +16,9 @@ module.exports = function (date, markup, callback) {
     url: img.attr('src'),
   };
 
+  if (!extractedValues.largeImage.title || !extractedValues.largeImage.url) {
+    callback('Failed to extract image for date: ' + date);
+  }
+
   callback(null, date, extractedValues);
 };
