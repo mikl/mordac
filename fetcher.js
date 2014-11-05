@@ -31,7 +31,7 @@ module.exports = function (startFrom) {
     db.get(date, function (err, value) {
       // If we do not have data for this date yet, fetch the markup,
       // parse it and store the output.
-      if ((err && err.name === 'NotFoundError') ||
+      if ((err && err.name === 'NotFoundError') || !value ||
           !value.largeImage || !value.largeImage.url) {
         async.waterfall([
           function (cb) {
@@ -43,9 +43,14 @@ module.exports = function (startFrom) {
 
           // Save the extracted data before proceeding.
           function (date, values, cb) {
-            db.put(date, values, function (err) {
-              cb(err, date, values);
-            });
+            if (values) {
+              db.put(date, values, function (err) {
+                cb(err, date, values);
+              });
+            }
+            else {
+              cb();
+            }
           }
         ], callback);
       }
@@ -67,7 +72,7 @@ module.exports = function (startFrom) {
   };
 
   this.run = function (dayCount, callback) {
-    var stopDate = moment(startpoint).subtract('days', 30);
+    var stopDate = moment(startpoint).subtract('days', dayCount);
 
     var dateValues = {};
 
@@ -76,7 +81,9 @@ module.exports = function (startFrom) {
       function () { return position.isAfter(stopDate); },
       function (cb) {
         fetchDate(position.format('YYYY-MM-DD'), function (err, date, values) {
-          dateValues[date] = values;
+          if (values) {
+            dateValues[date] = values;
+          }
 
           cb(err, date, values);
         });
