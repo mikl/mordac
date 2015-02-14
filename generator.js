@@ -9,7 +9,6 @@ var path = require('path');
 var ATOMWriter = require('atom-writer');
 var XMLWriter = require('xml-writer');
 var cheerio = require('cheerio');
-var moment = require('moment');
 var output_dir = path.resolve(__dirname, 'public');
 
 // Create the output dir when this file is loaded.

@@ -1,4 +1,4 @@
-// Fetcher, gets the HTML page and returns the wanted data. 
+// Fetcher, gets the HTML page and returns the wanted data.
 
 'use strict';
 
@@ -15,13 +15,13 @@ module.exports = function (startFrom) {
   // Database to keep track of already fetched content.
   // The keys are the date, and the value is the data structure returned
   // by the parser. LevelUP transparently translates it to and from JSON.
-  var db = levelup(path.resolve(__dirname, './mordac.db'), { 
+  var db = levelup(path.resolve(__dirname, './mordac.db'), {
     valueEncoding: 'json',
   });
 
   // Save the point we started from.
   var startpoint = startFrom;
-  
+
   // Keep track of where we are now.
   var position = startpoint;
 
@@ -72,7 +72,7 @@ module.exports = function (startFrom) {
   };
 
   this.run = function (dayCount, callback) {
-    var stopDate = moment(startpoint).subtract('days', dayCount);
+    var stopDate = moment(startpoint).subtract(dayCount, 'days');
 
     var dateValues = {};
 
