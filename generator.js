@@ -60,8 +60,8 @@ module.exports = function generator(values) {
 
     aw
       .startEntry(baseURN + 'entry:' + key, date, date)
-      .writeTitle(values[key].largeImage.title)
-      .writeContent(htmlImageFragment(values[key].largeImage.url, values[key].largeImage.title), 'html')
+      .writeTitle(values[key].largeImage.title || '')
+      .writeContent(htmlImageFragment(values[key].largeImage.url, values[key].largeImage.title || ''), 'html')
       .endEntry();
   });
 
