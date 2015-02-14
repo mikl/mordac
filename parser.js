@@ -9,11 +9,11 @@ module.exports = function (date, markup, callback) {
 
   var $ = cheerio.load(markup);
 
-  var img = $('#strip_enlarged_' + date + ' img');
+  var img = $('.comic-item-container .img-comic');
 
   extractedValues.largeImage = {
-    title: img.attr('title'),
-    url: img.attr('src'),
+    title: img.attr('alt'),
+    url: img.attr('src')
   };
 
   if (!extractedValues.largeImage.title || !extractedValues.largeImage.url) {
