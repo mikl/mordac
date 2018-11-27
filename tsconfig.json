@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
