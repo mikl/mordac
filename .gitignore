@@ -13,6 +13,7 @@ results
 
 npm-debug.log
 
+/dist
 /mordac.db
 /node_modules/
 /public/
