@@ -2,6 +2,8 @@
 
 import * as cheerio from 'cheerio'
 
+const protocolRelativePrefixMatcher = /^\/\//
+
 export interface IParserExtractedValues {
   largeImage?: IParserExtractedImage
 }
@@ -23,7 +25,7 @@ export async function parser(
 
   extractedValues.largeImage = {
     title: img.attr('alt'),
-    url: img.attr('src')
+    url: img.attr('src').replace(protocolRelativePrefixMatcher, 'https://')
   }
 
   if (!extractedValues.largeImage.title || !extractedValues.largeImage.url) {
