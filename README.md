@@ -18,7 +18,7 @@ Usage
 1. Clone this repository somewhere.
 2. Go to the checked out folder.
 3. Run `npm install` to install dependencies.
-4. Run `node .` to fetch data and generate the feed.
+4. Run `npn run mordac` to fetch data and generate the feed.
 5. Find your new `atom.xml` file in the `public` folder.
 
 [offical Dilbert RSS feeds]: http://dilbert.com/rss/

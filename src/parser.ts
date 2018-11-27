@@ -1,5 +1,3 @@
-// Parse the Dilbert.com markup, and locate the data we need.
-
 import * as cheerio from 'cheerio'
 
 const protocolRelativePrefixMatcher = /^\/\//
@@ -13,6 +11,9 @@ export interface IParserExtractedImage {
   url: string
 }
 
+/**
+ * Parse the Dilbert.com markup, and locate the data we need.
+ */
 export async function parser(
   date: string,
   markup: string
